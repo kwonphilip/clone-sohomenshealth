@@ -1,8 +1,8 @@
 {
-  "name": "clone-sohomenshealth",
+  "name": "clone-testsite",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://YOUR_USERNAME.github.io/clone-sohomenshealth",
+  "homepage": "https://YOUR_USERNAME.github.io/clone-testsite",
   "dependencies": {
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
