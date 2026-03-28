@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { treatments } from './treatments';
+import { treatmentImages } from '../../images';
 import '../Treatments.css';
 
 export default function SkinTreatments() {
@@ -19,8 +20,13 @@ export default function SkinTreatments() {
       <section className="section">
         <div className="container">
           <div className="treatments-grid">
-            {treatments.map((t) => (
+            {treatments.map((t, i) => (
               <div key={t.name} className="treatment-card">
+                <img
+                  src={treatmentImages[i % treatmentImages.length]}
+                  alt={t.name}
+                  className="treatment-card__img"
+                />
                 {/* First-visit price badge — only shown when available */}
                 {t.firstPrice && (
                   <span className="treatment-card__first-badge">

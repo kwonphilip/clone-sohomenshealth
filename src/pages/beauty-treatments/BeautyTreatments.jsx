@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { treatments } from './treatments';
+import { treatmentImages } from '../../images';
 import '../Treatments.css';
 
 export default function BeautyTreatments() {
@@ -19,8 +20,13 @@ export default function BeautyTreatments() {
       <section className="section">
         <div className="container">
           <div className="treatments-grid">
-            {treatments.map((t) => (
+            {treatments.map((t, i) => (
               <div key={t.name} className="treatment-card">
+                <img
+                  src={treatmentImages[(i + 3) % treatmentImages.length]}
+                  alt={t.name}
+                  className="treatment-card__img"
+                />
                 <div className="treatment-card__top">
                   <h2 className="treatment-card__name">{t.name}</h2>
                   <span className="treatment-card__price">{t.price}</span>

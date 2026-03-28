@@ -15,6 +15,16 @@
   transition: var(--transition);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.treatment-card__img {
+  display: block;
+  width: calc(100% + 4rem);
+  margin: -2rem -2rem 1.5rem -2rem;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
 }
 
 .treatment-card:hover {
