@@ -1,4 +1,8 @@
 import { Link } from 'react-router-dom';
+import heroImg from '../images/hero-image.jpg.jpg';
+import skinImg from '../images/home-skin.jpg';
+import beautyImg from '../images/home-beauty.jpg';
+import spaImg from '../images/home-spa.jpg';
 import './Home.css';
 
 const services = [
@@ -8,6 +12,7 @@ const services = [
     label: 'Skin Treatments',
     desc: 'HydraFacials, chemical peels, microneedling, and advanced skin therapies tailored to your unique complexion.',
     color: 'rose',
+    img: skinImg,
   },
   {
     to: '/beauty-treatments',
@@ -15,6 +20,7 @@ const services = [
     label: 'Beauty Treatments',
     desc: 'Brow artistry, lash enhancements, permanent makeup, and precision beauty services for a polished look.',
     color: 'gold',
+    img: beautyImg,
   },
   {
     to: '/spa-treatments',
@@ -22,6 +28,7 @@ const services = [
     label: 'Spa Treatments',
     desc: 'Full-body massages, therapeutic wraps, and restorative rituals designed to melt away stress.',
     color: 'sage',
+    img: spaImg,
   },
 ];
 
@@ -44,7 +51,7 @@ export default function Home() {
       {/* ── HERO ── */}
       <section className="hero">
         <div className="hero__bg" aria-hidden="true" />
-        <div className="hero__content container">
+        <div className="hero__content">
           <p className="hero__eyebrow">Welcome to</p>
           <h1 className="hero__title">
             Rejuvi<span>-Skin</span>
@@ -62,6 +69,9 @@ export default function Home() {
               Explore Services
             </Link>
           </div>
+        </div>
+        <div className="hero__image-wrap" aria-hidden="true">
+          <img src={heroImg} alt="" className="hero__image" />
         </div>
         <div className="hero__scroll-hint" aria-hidden="true">
           <span />
@@ -118,8 +128,9 @@ export default function Home() {
           </div>
 
           <div className="services-grid">
-            {services.map(({ to, icon, label, desc, color }) => (
+            {services.map(({ to, icon, label, desc, color, img }) => (
               <Link key={to} to={to} className={`service-card service-card--${color}`}>
+                <img src={img} alt={label} className="service-card__img" />
                 <div className="service-card__icon">{icon}</div>
                 <h3 className="service-card__title">{label}</h3>
                 <p className="service-card__desc">{desc}</p>
