@@ -22,9 +22,14 @@
   display: block;
   width: calc(100% + 4rem);
   margin-bottom: 1rem;
-  height: 200px;
+  height: 240px;
   object-fit: cover;
   border-radius: var(--radius-md) var(--radius-md) 0 0;
+  transition: filter 0.4s ease;
+}
+
+.treatment-card:hover .treatment-card__img {
+  filter: brightness(1.05) saturate(1.06);
 }
 
 .treatment-card:hover {

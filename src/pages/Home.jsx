@@ -107,7 +107,7 @@ export default function Home() {
               <span className="intro__stat-label">Happy Clients</span>
             </div>
             <div className="intro__stat intro__stat--2">
-              <span className="intro__stat-num">98%</span>
+              <span className="intro__stat-num">100%</span>
               <span className="intro__stat-label">Satisfaction Rate</span>
             </div>
           </div>
