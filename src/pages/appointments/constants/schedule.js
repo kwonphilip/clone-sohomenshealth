@@ -32,25 +32,6 @@ export const MONTH_NAMES_FULL = [
 ];
 
 /**
- * Number of days to show in the date picker on initial render.
- * Two weeks (14 days) is the default per the product requirements.
- */
-export const INITIAL_DAYS = 14;
-
-/**
- * Number of additional days to reveal each time "Show more dates" is clicked.
- * Adding one week at a time keeps the UI from growing too large at once.
- */
-export const LOAD_MORE_DAYS = 14;
-
-/**
- * Hard cap on how far ahead a client can book (approximately 12 months).
- * 365 is used as a round upper bound; a production implementation might
- * derive this from a business-rules API.
- */
-export const MAX_DAYS = 365;
-
-/**
  * Business operating hours, expressed as 24-hour integers.
  *
  * `start` is inclusive — the first slot begins at this hour.

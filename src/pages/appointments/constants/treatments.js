@@ -1,61 +1,31 @@
 /**
- * treatments.js — Treatment menu data and default form state for the
- * Appointments feature.
+ * treatments.js — Treatment data and default form state for the Appointments feature.
  *
- * Keeping these in a dedicated constants file makes it easy to add,
- * remove, or rename services without touching any component or helper logic.
- * When the service menu changes, this is the only file that needs updating.
+ * TREATMENT_OPTIONS is derived directly from the three page treatment files
+ * (skin-treatments, beauty-treatments, spa-treatments) so that treatment names
+ * only ever need to be maintained in one place. Renaming a treatment on its page
+ * automatically updates the checklist here with no extra steps.
  */
 
+import { treatments as skinTreatments }    from '../../skin-treatments/treatments';
+import { treatments as beautyTreatments }  from '../../beauty-treatments/treatments';
+import { treatments as spaTreatments }     from '../../spa-treatments/treatments';
+
 /**
- * All available treatments grouped by category.
- * Used in Step 3 to render the treatment-interest checklist.
- *
- * Object key  → category heading displayed above each group.
- * Array value → individual service names within that category.
+ * All available treatments grouped by category, used to render the
+ * treatment-interest checklist in Step 3 of the booking form.
  *
  * @type {Record<string, string[]>}
  */
 export const TREATMENT_OPTIONS = {
-  'Skin Treatments': [
-    'HydraFacial',
-    'Chemical Peel',
-    'Microneedling',
-    'Microdermabrasion',
-    'LED Light Therapy',
-    'Dermaplaning',
-    'Oxygen Facial',
-    'Lymphatic Drainage Facial',
-  ],
-  'Beauty Treatments': [
-    'Full Makeup Application',
-    'Brow Shaping & Tinting',
-    'Lash Lift & Tint',
-    'Classic Lash Extensions',
-    'Volume Lash Extensions',
-    'Lip Blush (PMU)',
-    'Microblading',
-    'Waxing Services',
-  ],
-  'Spa Treatments': [
-    'Swedish Massage',
-    'Deep Tissue Massage',
-    'Hot Stone Massage',
-    'Aromatherapy Massage',
-    'Couples Massage',
-    'Body Wrap',
-    'Salt & Sugar Scrub',
-    'Reflexology',
-  ],
+  'Skin Treatments':   skinTreatments.map(t => t.name),
+  'Beauty Treatments': beautyTreatments.map(t => t.name),
+  'Spa Treatments':    spaTreatments.map(t => t.name),
 };
 
 /**
- * Blank form state used to initialize the appointment form and to reset
- * it after a successful submission.
- *
- * All new-client and returning-client fields live in one flat object so
- * the parent can use a single useState call and a single onChange handler.
- * Fields irrelevant to the current customerType are simply ignored on submit.
+ * Blank form state used to initialise the appointment form and to reset it
+ * after a successful submission.
  */
 export const INITIAL_FORM = {
   // ── New-client intake fields ─────────────────────────────────────────────
