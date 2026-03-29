@@ -22,7 +22,10 @@ export default function ServicesSection() {
           {services.map(({ to, icon, label, desc, color, img }, i) => (
             <Reveal key={to} delay={i * 120}>
               <Link to={to} className={`service-card service-card--${color}`}>
-                <img src={img} alt={label} className="service-card__img" />
+                <div className="service-card__img-wrap" aria-hidden="true">
+                  <img src={img} alt="" className="service-card__img" />
+                  <div className="service-card__img-overlay">Explore →</div>
+                </div>
                 <div className="service-card__icon">{icon}</div>
                 <h3 className="service-card__title">{label}</h3>
                 <p className="service-card__desc">{desc}</p>

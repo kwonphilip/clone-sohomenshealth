@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom';
 import Reveal from '../../../components/Reveal';
+import ctaBg from '../../../images/pexels-shvetsa-5069609.jpg';
 import './CtaBanner.css';
 
 export default function CtaBanner() {
   return (
     <section className="cta-banner">
-      <div className="cta-banner__bg" aria-hidden="true" />
+      <div className="cta-banner__bg" aria-hidden="true">
+        <img src={ctaBg} alt="" className="cta-banner__bg-img" />
+      </div>
       <Reveal className="container cta-banner__content">
         <p className="section-label cta-banner__label">Ready to Begin?</p>
         <h2 className="cta-banner__title">Your transformation starts here.</h2>
