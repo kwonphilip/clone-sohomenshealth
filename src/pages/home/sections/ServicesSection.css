@@ -55,11 +55,11 @@
 }
 
 .service-card--rose .service-card__img-overlay {
-  background: rgba(192, 128, 144, 0.52);
+  background: rgba(184, 136, 128, 0.52);
 }
 
 .service-card--gold .service-card__img-overlay {
-  background: rgba(174, 130, 68, 0.48);
+  background: rgba(106, 144, 112, 0.48);
 }
 
 .service-card:hover .service-card__img-overlay {
